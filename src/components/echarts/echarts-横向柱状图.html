@@ -19,38 +19,38 @@
     var option = {
         tooltip: {
             trigger: 'axis',
-            axisPointer: {
-                type: 'shadow'
+            axisPointer: { //坐标轴指示器
+                type: 'shadow' // cross
             }
         },
         grid: {
             left: '3%',
             right: '4%',
             top: 0,
-            containLabel: true
+            containLabel: true //是否包含刻度尺
         },
         xAxis: {
             type: 'value',
             axisLine: {
                 show: false
             },
-            axisTick: {
+            axisTick: { //是否显示x轴刻度
                 show: false
             }
         },
         yAxis: {
             type: 'category',
             data: category,
-            splitLine: {show: false},
+            splitLine: {show: false}, //是否显示分割线
             axisLine: {
+                show: false //是否显示坐标轴轴线
+            },
+            axisTick: { //是否显示y轴刻度
                 show: false
             },
-            axisTick: {
-                show: false
-            },
-            offset: 10,
+            offset: 10, //标题离y轴距离
             nameTextStyle: {
-                fontSize: 15
+                fontSize: 20,
             }
         },
         series: [
@@ -61,24 +61,21 @@
                 barWidth: 30,
                 barGap: 10,
                 smooth: true,
-                label: {
+                label: { // 标识文字
                     normal: {
                         show: true,
-                        position: 'top',
-                        offset: [5, -2],
+                        position: 'inside',
+                        offset: [0, -2],
                         textStyle: {
-                            color: '#F68300',
-                            fontSize: 13
+                            color: 'yellow',
+                            fontSize: 15
                         }
                     }
                 },
                 itemStyle: {
-                    emphasis: {
-                        barBorderRadius: 7
-                    },
                     normal: {
-                        barBorderRadius: 7,
-                        color: new echarts.graphic.LinearGradient(
+                        barBorderRadius: [7, 7, 0, 0],  //柱状图边角
+                        color: new echarts.graphic.LinearGradient( //柱状图渐变
                             0, 0, 1, 0,
                             [
                                 {offset: 0, color: '#3977E6'},
